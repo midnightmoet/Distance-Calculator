@@ -1,84 +1,131 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background: #f2f2f2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: slategray;
+}
+
+.fOne {
+  display: flex;
+  flex-direction: column;
+  /* width: 30%; */
+}
+
+.fTwo {
+  display: flex;
+  flex-direction: column;
+  /* width: 30%; */
+  /* border: 1px solid #333; */
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    height: 100vh;
+  display: block;
+  width: 60vw;
+  padding: 1rem;
+  margin: 0 auto;
+  border: 1px solid #333;
 }
 
-h1 {
-    text-align: center;
-    font-size: 50px;
-    border-bottom: 2px solid green;
+.main-heading {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #333;
+  border: 1px solid #333;
 }
 
-form { 
-    margin-top: 20px;
+label {
+  margin-bottom: 0.25rem;
 }
 
-input[type="text"] {
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
+
+input::placeholder {
+  font-style: italic;
+  text-align: center;
+}
+
+.input {
+  display: block;
+  width: 80%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  margin: 10px auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+span {
+  font-size: 0.75rem;
+  color: black;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#latlon {
+  text-align: center;
+  padding: 0.5rem;
+}
+
 
 button {
-    padding: 10px 20px;
-    margin: 10px;
-    background: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-    text-transform: uppercase;
+  width: 50%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-transform: uppercase;
 }
 
 button:hover {
-    background: white;
-    color: green;
-    box-shadow: 0 0 20px 2px green;
-    font-weight: bold;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 5px #333;
 }
 
 #result {
-    text-align: center;
-    padding: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+
 }
 
-.map{
-    width: 80%;
-    height: 200px;
-    margin: 0 auto;
-    background: white;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 2px green;
-    border: 2px solid green;
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        flex-wrap: wrap;
-        width: 90%;
-    }
-    h1 {
-        font-size: 30px;
-    }
-    form {
-       flex-wrap: wrap;
-    }
-    button {
-        width: 50%;
-        margin: 0 auto;
-        margin-top: 20px;
-    }
+@media screen and (min-width: 768px) {
+  .container {
+    width: 50vw;
+  }
 }

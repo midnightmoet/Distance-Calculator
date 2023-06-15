@@ -1,28 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Distance Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <h1>Distance Calculator</h1>
-    <form id="distanceForm">
-      <label for="location1">Point A (Latitude, Longitude or Address):</label>
-      <input type="text" id="location1" name="location1" required />
-      <br />
-      <label for="location2">Point B (Latitude, Longitude or Address):</label>
-      <input type="text" id="location2" name="location2" required />
-      <br />
-      <button type="submit">Calculate</button>
-    </form>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distance Calculator</title>
+<!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <div class="main-heading">
+    <h2>Let's calculate the distance between two points.</h2>
+  </div>
+  <div class="container">
+    <div>
+      <form class="fOne" id="fOne">
+        <h3></h3>
+        <label for="address">
+          Please enter an address into the input field below to retrieve its latitude and longitude values:
+        </label>
+        <input class="input" id="address" type="text" placeholder="e.g. Tampa, FL" required>
+        <button type="submit">Coordinates</button> 
+        <span>Source:<a href="https://developers.google.com/maps/gmp-get-started">Google Maps API</a></span>
+      </form>
+      <div id="latlon"></div>
+    </div>
+    <div>
+      <form class="fTwo" id="fTwo">
+        <h3>Enter latitude and longitude:</h3>
+        <label for="a">Point A (latitude, longitude)</label>
+        <input class="input" id="a" required>
+        <label for="b">Point B (latitude, longitude)</label>
+        <input class="input" id="b"required>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </div>
 
-    <!-- Not give result, need to fix API -->
-    <div id="result"></div>
-
-    <!-- add map -->
-    <div class="map">Map goes here</div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-    <script src="script.js"></script>
-  </body>
+  <!-- JAVASCRIPT -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChuy2798vjKQqp4RGBFmrZBBxRmJny8q0&libraries=places&callback=initMap">
+</script>
+<script src="script.js"></script>
+</body>
 </html>
