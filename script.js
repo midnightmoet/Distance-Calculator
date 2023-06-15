@@ -22,7 +22,7 @@ function degree2Radius(degree) {
   
     console.log(latitude1, longitude1, latitude2, longitude2);
   
-    let R = 3963; // Earth's radius in miles
+    let R = 6371; // Earth's radius in km
     let dLat = degree2Radius(latitude2 - latitude1); // deg2rad below
     let dLon = degree2Radius(longitude2 - longitude1);
     let a =
@@ -32,7 +32,7 @@ function degree2Radius(degree) {
         Math.sin(dLon / 2) *
         Math.sin(dLon / 2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    let d = (R * c).toFixed(2); // Distance in miles
+    let d = (R * c).toFixed(2); // Distance in km
   
     if (d === "NaN"){
       alert('Coordinates are not valid. Please try again.')
@@ -40,7 +40,7 @@ function degree2Radius(degree) {
       return;
     }
   
-    document.getElementById("result").innerHTML = `Distance: ${d} miles`;
+    document.getElementById("result").innerHTML = `Distance: ${d}km`;
   }
   
   
@@ -68,8 +68,8 @@ function degree2Radius(degree) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( {'address': address}, function(results, status) {
       if (status == 'OK') {
-        var latitude = results[0].geometry.location.lat();
-        var longitude = results[0].geometry.location.lng();
+        let latitude = results[0].geometry.location.lat();
+        let longitude = results[0].geometry.location.lng();
         console.log(latitude, longitude)
         document.getElementById("latlon").innerHTML=`(latitude, longitude) = (${latitude}, ${longitude})`;
   
