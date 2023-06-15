@@ -11,7 +11,7 @@ function calculateDistance(e) {
     let encodedAddress1 = encodeURIComponent(location1Input);
     let encodedAddress2 = encodeURIComponent(location2Input);
 
-    let apiKey = "AIzaSyBlIAVOXPTthLE11FWR2maf_kpS6MvvUrQ"; //GOOGLE MAPS API
+    let apiKey = "AIzaSyAED2cZlyb4qUJRzLW7Du7OG71uQsCTlB0"; //GOOGLE MAPS API; created my own and need to modify so it will work????
 
 // API URL
     let apiUrl1 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodedAddress1 + "&key=" + apiKey;
@@ -24,13 +24,13 @@ function calculateDistance(e) {
 
 // FETCH API
     let promise1 = fetch(apiUrl1)
-        .then((response) => {
+        .then(function(response){
             if (response.ok) {
                 return response.json();
             }
             throw new Error("Network response was not ok.");
         })
-        .then((data) => {
+        .then(function(data){
             if (data.status === "OK" && data.results.length > 0) {
                 let location1 = data.results[0].geometry.location;
                 latitude1 = location1.lat;
@@ -42,7 +42,7 @@ function calculateDistance(e) {
                 console.log("No results found.");
             }
         })
-        .catch((error)  => {
+        .catch(function(error){
             console.log("Error:", error.message);
         });
 
@@ -65,12 +65,12 @@ function calculateDistance(e) {
                 console.log("No results found.");
             }
         })
-        .catch((error) => {
+        .catch(function(error){
             console.log("Error:", error.message);
         });
 
     Promise.all([promise1, promise2])
-        .then(()  => {
+        .then(function(){
             let distance = calculateDistance(latitude1, longitude1, latitude2, longitude2);
             displayResult(distance);
         });

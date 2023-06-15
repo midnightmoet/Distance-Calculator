@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Distance Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<div class="container">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
     <h1>Distance Calculator</h1>
     <form id="distanceForm">
-        <label for="location1">Point A (Latitude, Longitude or Address):</label>
-        <input type="text" id="location1" name="location1" required>
-
-        <label for="location2">Point B (Latitude, Longitude or Address):</label>
-        <input type="text" id="location2" name="location2" required>
-
-        <button type="submit">Calculate</button>
+      <label for="location1">Point A (Latitude, Longitude or Address):</label>
+      <input type="text" id="location1" name="location1" required />
+      <br />
+      <label for="location2">Point B (Latitude, Longitude or Address):</label>
+      <input type="text" id="location2" name="location2" required />
+      <br />
+      <button type="submit">Calculate</button>
     </form>
+
+    <!-- Not give result, need to fix API -->
     <div id="result"></div>
-</div>
 
+    <!-- add map -->
+    <div class="map">Map goes here</div>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-<script src="script.js"></script>
-</body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
