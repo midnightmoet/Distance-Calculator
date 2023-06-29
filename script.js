@@ -32,15 +32,15 @@ function degree2Radius(degree) {
         Math.sin(dLon / 2) *
         Math.sin(dLon / 2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    let d = (R * c).toFixed(2); // Distance in km
+    let distance = (R * c).toFixed(2); // Distance in km
   
-    if (d === "NaN"){
+    if (distance === "NaN"){
       alert('Coordinates are not valid. Please try again.')
       document.getElementById("result").innerHTML = '';
       return;
     }
   
-    document.getElementById("result").innerHTML = `Distance: ${d}km`;
+    document.getElementById("result").innerHTML = `Distance: ${distance}km`;
   }
   
   
